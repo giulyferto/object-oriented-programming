@@ -12,16 +12,26 @@ public class Main {
         Person obama = new Person();
 
         //Se le asignan valores a los objetos
+
+        //Animal
         raccoon.breed = "Procyon lotor lotor";
         raccoon.color = "Gray & Black";
         raccoon.name = "Junior";
 
+        //Auto
         car.brand = "Mazda";
-        car.maxSpeed = "150 km/h";
+        car.maxSpeed = 150;
         car.color = "White";
 
+        //Persona
+        obama.name = "Barack";
+        obama.lastName = "Obama";
+        obama.age = 59;
 
-        System.out.println(obama.name = "Barack");
+        //Se muestran los valores de los objetos
+        System.out.println(raccoon.breed + " " + raccoon.color + " " + raccoon.name);
+        System.out.println(car.brand + " " + car.color + " " + car.maxSpeed + "Km/h");
+        System.out.println(obama.name + " " + obama.lastName + " " + obama.age + "years old");
 
 
         //Se ejecuta un metodo de cada clase
