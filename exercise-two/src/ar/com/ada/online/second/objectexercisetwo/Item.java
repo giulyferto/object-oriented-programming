@@ -1,5 +1,6 @@
 package ar.com.ada.online.second.objectexercisetwo;
 
+import java.util.Date;
 
 public class Item {
     //Se definen los atributos
@@ -10,21 +11,19 @@ public class Item {
 
     void calculateTax() {
         tax = price * 0.21;
-        System.out.println("El impuesto del producto es de: $" + tax );
+        System.out.println("El impuesto del producto es de: $" + tax);
     }
 
     Double getTotalToPay() {
         Double result = price + tax;
         return result;
     }
+
+//    Boolean canItBeSold(expirationDate) {
+//        return true;
+//    }
 }
 
-//    Boolean canItBeSold() {
-//        //Se comparan las dos fechas
-//        if (expirationDate.after(//fecha actual){
-//            Boolean expired = true;
-//        }
-//
-//        return null;
-//    }
-//}
+
+
+
