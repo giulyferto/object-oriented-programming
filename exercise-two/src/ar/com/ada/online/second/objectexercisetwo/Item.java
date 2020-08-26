@@ -9,21 +9,22 @@ public class Item {
     String expirationDate;
 
     void calculateTax() {
-
         tax = price * 0.21;
+        System.out.println("El impuesto del producto es de: $" + tax );
     }
 
     Double getTotalToPay() {
         Double result = price + tax;
         return result;
     }
-
-    Boolean canItBeSold() {
-        //Se comparan las dos fechas
-        if (expirationDate.after(//fecha actual){
-            Boolean expired = true;
-        }
-
-        return null;
-    }
 }
+
+//    Boolean canItBeSold() {
+//        //Se comparan las dos fechas
+//        if (expirationDate.after(//fecha actual){
+//            Boolean expired = true;
+//        }
+//
+//        return null;
+//    }
+//}

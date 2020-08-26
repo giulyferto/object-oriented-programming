@@ -10,11 +10,7 @@ public class Main {
     public static void main(String[] args) {
         //Se crean los objetos
 
-        Item itemName = new Item();
-        Item itemPrice = new Item();
-        Item itemTax = new Item();
-        Item itemTotalToPay = new Item();
-        Item date = new Item();
+        Item item = new Item();
         Date itemExpirationDate = new Date();
         Date actualDate = new Date();
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/YY");
@@ -22,23 +18,28 @@ public class Main {
 
         //Se le pide al usuario que ingrese los datos
         try { //Responde a la excepcion de parse
-        System.out.print("Ingrese el nombre del producto: ");
-        itemName.name = keyboard.nextLine();
+            System.out.print("Ingrese el nombre del producto: ");
+            item.name = keyboard.nextLine();
 
-        System.out.print("Ingrese el precio del producto: ");
-        itemPrice.price = keyboard.nextDouble();
+            System.out.print("Ingrese el precio del producto: ");
+            item.price = keyboard.nextDouble();
 
-        System.out.print("Ingrese la fecha de vencimiento del producto(dd/MM/yy): ");
-        date.expirationDate = keyboard.next();//Se guarda la fecha en una variable de tipo STRING
+            System.out.print("Ingrese la fecha de vencimiento del producto(dd/MM/yy): ");
+            item.expirationDate = keyboard.next();//Se guarda la fecha en una variable de tipo STRING
 
-            itemExpirationDate = dateFormat.parse(date.expirationDate); //Y aca se transforma una variable de un tipo a otro tipo
+            itemExpirationDate = dateFormat.parse(item.expirationDate); //Y aca se transforma una variable de un tipo a otro tipo
+        } catch (ParseException e) {//Responde a la excepcion de parse
+
         }
-        catch (ParseException e){//Responde a la excepcion de parse
 
-        }
-
-
-
+        //Se muestra el nombre del producto
+        System.out.println("\nSu producto: " + item.name);
+        //Se muestra el precio
+        System.out.println("Tiene un costo de: $" + item.price);
+        //Se muestra el impuesto del producto ejecutando el metodo
+        item.calculateTax();
+        //Semuestra el precio final del producto ejecutando el metodo
+        System.out.println("El precio final del producto sera de: " + item.getTotalToPay());
 
 
     }
