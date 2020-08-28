@@ -7,11 +7,10 @@ public class Item {
     String name;
     Double price;
     Double tax;
-    String expirationDate;
+    Date expirationDate;
 
     void calculateTax() {
         tax = price * 0.21;
-        System.out.println("El impuesto del producto es de: $" + tax);
     }
 
     Double getTotalToPay() {
@@ -19,9 +18,11 @@ public class Item {
         return result;
     }
 
-//    Boolean canItBeSold(expirationDate) {
-//        return true;
-//    }
+    Boolean canItBeSold() {
+        Date today = new Date();
+        Boolean canItBeSold = expirationDate.after(today);
+        return canItBeSold;
+    }
 }
 
 
