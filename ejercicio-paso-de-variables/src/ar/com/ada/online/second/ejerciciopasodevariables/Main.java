@@ -18,7 +18,7 @@ public class Main {
         //Se muestran los resultados
         System.out.println("El resultado de la suma es de: " + result.getResultSum());
         System.out.println("El resultado de la resta es de: " + result.getResultSubstraction());
-        System.out.println("El resultado de la suma es de: " + result.getResultMultiplication());
-        System.out.println("El resultado de la suma es de: " + result.getResultDivision());
+        System.out.println("El resultado de la multiplicacion es de: " + result.getResultMultiplication());
+        System.out.println("El resultado de la division es de: " + result.getResultDivision());
     }
 }
