@@ -42,7 +42,7 @@ public class Person {
 
     @Override
     public String toString() {
-        return "Nombre y apellido de la persona";
+        return String.format("Person: {name = %s, lastName = %s} ", this.name, this.lastName);
     }
 
     @Override
@@ -50,11 +50,12 @@ public class Person {
         return -10 * Objects.hash(name, lastName);
     }
 
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null || this.getClass() != obj.getClass()) return false;
         Person that = (Person) obj;
-        return name.equals(that.name) && lastName.equals(this.lastName);
+        return name.equals(that.name) && lastName.equals(that.lastName);
     }
 }
