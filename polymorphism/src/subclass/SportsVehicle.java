@@ -34,47 +34,23 @@ public class SportsVehicle extends Vehicle {
 
     //metodos de sobreescritura de la superclase
     public String technicalSheet() {
+        String message;
         if (rpm > 0 && rpm <= 50) {
-            return String.format(
-                    "\nMarca: %s\n" +
-                            "Modelo: %s\n" +
-                            "Año: %d\n" +
-                            "\nEl auto es muy bonito pero solo sirve para salir a pasear\n",
-                    this.brand,
-                    this.model,
-                    this.year
-            );
+            message = "El auto es muy bonito pero solo sirve para salir a pasear\n";
         } else if (rpm <= 300) {
-            return String.format(
-                    "\nMarca: %s\n" +
-                            "Modelo: %s\n" +
-                            "Año: %d\n" +
-                            "\nCon este auto puedes desafiar a cualquiera en la pista\n",
-                    this.brand,
-                    this.model,
-                    this.year
-            );
+            message = "Con este auto puedes desafiar a cualquiera en la pista\n";
         } else if (rpm <= 600) {
-            return String.format(
-                    "\nMarca: %s\n" +
-                            "Modelo: %s\n" +
-                            "Año: %d\n" +
-                            "\nSi tienes este auto, debes considerar participar en NASCAR\n",
-                    this.brand,
-                    this.model,
-                    this.year
-            );
+            message = "Si tienes este auto, debes considerar participar en NASCAR\n";
         } else {
-            return String.format(
-                    "\nMarca: %s\n" +
-                            "Modelo: %s\n" +
-                            "Año: %d\n" +
-                            "\n¿Eres parte del elenco de rápidos y furiosos?\n",
-                    this.brand,
-                    this.model,
-                    this.year
-            );
+            message = "¿Eres parte del elenco de rápidos y furiosos?\n";
         }
+        return String.format(
+                "\nMarca: %s\n Modelo: %s\n Año: %d\n %s",
+                this.brand,
+                this.model,
+                this.year,
+                message
+        );
     }
 
     //Override

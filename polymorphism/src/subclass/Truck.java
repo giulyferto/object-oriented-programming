@@ -32,27 +32,18 @@ public class Truck extends Vehicle {
 
     //metodos de sobreescritura de la superclase
     public String technicalSheet() {
+        String message;
         if (maxLoad < 100) {
-            return String.format(
-                    "\nMarca: %s\n" +
-                            "Modelo: %s\n" +
-                            "Año: %d\n" +
-                            "Para iniciar un negocio de flete, esta muy bien este auto\n",
-                    this.brand,
-                    this.model,
-                    this.year
-            );
+            message = "Para iniciar un negocio de flete, esta muy bien este auto\n";
         } else {
-            return String.format(
-                    "\nMarca: %s\n" +
-                            "Modelo: %s\n" +
-                            "Año: %d\n" +
-                            "Tienes que usar este auto en el campo, es una máquina de trabajo!!\n",
-                    this.brand,
-                    this.model,
-                    this.year
-            );
+            message = "Tienes que usar este auto en el campo, es una máquina de trabajo!!\n";
         }
+        return String.format("\nMarca: %s\n Modelo: %s\n Año: %d\n %s",
+                this.brand,
+                this.model,
+                this.year,
+                message
+        );
     }
 
     //Override

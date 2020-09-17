@@ -56,7 +56,7 @@ public class Vehicle {
                 this.brand,
                 this.model,
                 this.year
-                );
+        );
     }
 
     //override
