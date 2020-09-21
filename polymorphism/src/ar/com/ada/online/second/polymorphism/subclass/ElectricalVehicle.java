@@ -1,6 +1,6 @@
-package subclass;
+package ar.com.ada.online.second.polymorphism.subclass;
 
-import superclass.Vehicle;
+import ar.com.ada.online.second.polymorphism.superclass.Vehicle;
 
 import java.util.Objects;
 
@@ -29,21 +29,34 @@ public class ElectricalVehicle extends Vehicle {
     public void setPotency(Integer potency) {
         this.potency = potency;
     }
+
     //metodos de sobreescritura de la superclase
-
     public String technicalSheet() {
-        if (this.year < 2007) {
+        if (this.year < 2007){
             return "\nNo existe modelo para este año";
+        } else {
+            return  String.format(
+                    "\nMarca: %s\n" +
+                            "Modelo: %s\n" +
+                            "Año: %d\n" +
+                            "Es un auto de última tecnología!",
+                    this.brand,
+                    this.model,
+                    this.year
+            );
+        }
 
-        } else return String.format(
-                "\nMarca: %s\n" +
-                        "Modelo: %s\n" +
-                        "Año: %d\n" +
-                        "Es un auto de última tecnología!",
-                this.brand,
-                this.model,
-                this.year
-        );
+        /*return this.year < 2007 ?
+                "\nNo existe modelo para este año" :
+                String.format(
+                        "\nMarca: %s\n" +
+                                "Modelo: %s\n" +
+                                "Año: %d\n" +
+                                "Es un auto de última tecnología!",
+                        this.brand,
+                        this.model,
+                        this.year
+                );*/
     }
 
     //Override

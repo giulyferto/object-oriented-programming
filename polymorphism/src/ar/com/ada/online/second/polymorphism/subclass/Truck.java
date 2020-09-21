@@ -1,6 +1,6 @@
-package subclass;
+package ar.com.ada.online.second.polymorphism.subclass;
 
-import superclass.Vehicle;
+import ar.com.ada.online.second.polymorphism.superclass.Vehicle;
 
 import java.util.Objects;
 

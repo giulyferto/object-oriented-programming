@@ -1,9 +1,9 @@
 package ar.com.ada.online.second.polymorphism;
 
-import subclass.ElectricalVehicle;
-import subclass.SportsVehicle;
-import subclass.Truck;
-import superclass.Vehicle;
+import ar.com.ada.online.second.polymorphism.subclass.ElectricalVehicle;
+import ar.com.ada.online.second.polymorphism.subclass.SportsVehicle;
+import ar.com.ada.online.second.polymorphism.subclass.Truck;
+import ar.com.ada.online.second.polymorphism.superclass.Vehicle;
 
 public class Main {
 
@@ -23,8 +23,11 @@ public class Main {
                 new Truck(60, "Ford", "F-150", 2007)
         };
 
-        for (int i = 0; i < vehicle.length; i++) {
+        /*for (int i = 0; i < vehicle.length; i++) {
             System.out.println(vehicle[i].technicalSheet());
+        }*/
+        for (Vehicle vehicles : vehicle) {
+            System.out.println(vehicles.technicalSheet());
         }
     }
 }
