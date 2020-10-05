@@ -3,8 +3,28 @@ package ar.com.ada.online.second.tesacamosunojo;
 import java.util.Objects;
 
 public abstract class Product {
+    protected String name;
+    protected Double price;
     protected Double discount;
-    protected Double finalPrice;
+
+    public Product() {
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
 
     public Double getDiscount() {
         return discount;
@@ -14,15 +34,7 @@ public abstract class Product {
         this.discount = discount;
     }
 
-    public Double getFinalPrice() {
-        return finalPrice;
-    }
-
-    public void setFinalPrice(Double finalPrice) {
-        this.finalPrice = finalPrice;
-    }
-    
-    public abstract void discountedPrice ();
+    public abstract void calculateDiscount ();
 
     @Override
     public boolean equals(Object obj) {
@@ -30,11 +42,11 @@ public abstract class Product {
         if (obj == null || getClass() != obj.getClass()) return false;
         Product that = (Product) obj;
         return discount.equals(that.discount) &&
-                finalPrice.equals(that.finalPrice);
+                name.equals(that.name) && price.equals(that.price);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(discount, finalPrice);
+        return Objects.hash(discount, price, name);
     }
 }
